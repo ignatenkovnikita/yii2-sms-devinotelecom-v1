@@ -2,6 +2,8 @@ Yii2 SMS Devino Telecom Client V1
 =================================
 Yii2 SMS Devino Telecom Client V1
 
+Documentation on official suite [doc](http://devino-documentation.readthedocs.io/httpapi.html)
+
 Installation
 ------------
 
@@ -28,4 +30,21 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \ignatenkovnikita\devinotelecomsms\AutoloadExample::widget(); ?>```
+    'sms' => array(
+    'class' => \ignatenkovnikita\devinotelecomsms\Client::className(),
+    'from' =>  your_text,
+    'login' => your_login,
+    'password' => your_password,
+),
+```
+
+TODO
+----
+Add other method
+ - change sms send, add sendDate & validity
+ - send sms by timezone
+ - sms send to many number
+ - state send sms
+ - get sms on perion
+ - get stat sms sending
+ - add error code
