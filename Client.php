@@ -10,6 +10,7 @@
 namespace ignatenkovnikita\devinotelecomsms;
 
 
+use GuzzleHttp\Exception\ClientException;
 use yii\base\Component;
 use yii\base\Exception;
 
@@ -72,7 +73,8 @@ class Client extends Component
         try {
             $request = $this->_send('sms/send', $data, "POST");
             return json_decode($request->getBody()->getContents());
-        } catch (Exception $e) {
+        } catch (ClientException $e) {
+            \Yii::error($e->getMessage(), 'sms');
         }
 
 
